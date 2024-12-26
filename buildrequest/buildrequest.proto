@@ -1,0 +1,26 @@
+syntax = "proto3";
+
+package buildrequest;
+
+option go_package = "github.com/Surya-V-28/grpc-common/buildrequest";
+
+// Service definition
+service BuildRequestService {
+    rpc CreateBuildRequestMethod (CreateBuildRequest) returns (CreateBuildRespone);
+}
+
+// Message for the build request
+message CreateBuildRequest {
+    // All fields are mandatory; validate in the application logic.
+    string git_url = 1; // Required: Git repository URL
+    string git_branch = 2; // Required: Git branch name
+    string current_user = 3; // Required: Username of the current user
+    string owner = 4; // Required: Repository owner name
+    bool public_repo = 5; // Required: Indicates if the repository is public
+    string app_framework = 6; // Required: Application framework used
+}
+
+// Message for the response
+message CreateBuildRespone {
+    string status = 1; // Status of the build request
+}
