@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+option go_package = "github.com/Surya-V-28/grpc-common/buildrequest"
+
+
+// Define your service
+service BuildRequestService {
+  rpc CreateBuildRequestMethod (CreateBuildRequest) returns (CreateBuildResponse);
+}
+
+// Define your messages
+message CreateBuildRequest {
+  string git_url = 1;
+  string git_branch = 2;
+  string current_user = 3;
+  string owner = 4;
+  bool public_repo = 5;
+  string app_framework = 6;
+}
+
+message CreateBuildResponse {
+  string status = 1;
+}
