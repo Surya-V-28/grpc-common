@@ -2,7 +2,7 @@ syntax = "proto3";
 
 package buildrequest;
 
-option go_package = "github.com/Surya-V-28/grpc-common/buildrequest";
+option go_package = "buildrequest/";
 
 // Service definition
 service BuildRequestService {
